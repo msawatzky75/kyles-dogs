@@ -1,0 +1,2 @@
+module ProductStatusCodesHelper
+end
