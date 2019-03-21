@@ -1,5 +1,5 @@
 class OrderItem < ApplicationRecord
-	has :product
+	has_one :product
 	belongs_to :order
 
 	validates :price, :quantity, presence: true
