@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_145508) do
+ActiveRecord::Schema.define(version: 2019_03_21_201730) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -96,6 +96,10 @@ ActiveRecord::Schema.define(version: 2019_03_21_145508) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_category_id"
+    t.integer "product_status_code_id"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
+    t.index ["product_status_code_id"], name: "index_products_on_product_status_code_id"
   end
 
 end

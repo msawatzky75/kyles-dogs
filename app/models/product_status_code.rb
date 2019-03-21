@@ -1,5 +1,5 @@
 class ProductStatusCode < ApplicationRecord
-	belongs_to :product
+	has_many :products
 
 	validates :name, :description, presence: true
 end

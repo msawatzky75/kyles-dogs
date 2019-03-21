@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-	has_one :product_status_code
-	has_one :product_category
+	belongs_to :product_status_code
+	belongs_to :product_category
 
-	validates :name, :description, :price, presence: true
+	validates :name, :description, :price, :product_category, presence: true
 end
