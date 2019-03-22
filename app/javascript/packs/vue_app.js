@@ -6,7 +6,11 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
+import Buefy from 'buefy'
 import App from '../app.vue'
+import 'buefy/dist/buefy.css'
+
+Vue.use(Buefy)
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('hello'))
