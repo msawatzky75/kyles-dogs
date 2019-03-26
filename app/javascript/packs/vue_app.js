@@ -5,73 +5,50 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
-import Buefy from 'buefy'
-import App from '../app.vue'
-import 'buefy/dist/buefy.css'
+import Buefy from "buefy";
+import Vue from "vue";
+import Vuex from "vuex";
+import VueRouter from "vue-router";
 
-Vue.use(Buefy)
+import "buefy/dist/buefy.css";
+import App from "../app.vue";
+import Home from "../home.vue";
+import Product from "../product.vue";
+import Products from "../products.vue";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('hello'))
-  const app = new Vue({
-    el,
-    render: h => h(App)
-  })
+Vue.use(Buefy);
+Vue.use(VueRouter);
+Vue.use(Vuex);
 
-  console.log(app)
-})
+Vue.component(Product);
 
+const router = new VueRouter({
+	routes: [
+		{
+			path: "/",
+			component: Home
+		},
+		{
+			path: "/products",
+			name: "product",
+			component: Products
+		},
+		{
+			path: "/product/:id",
+			props: true,
+			name: "product",
+			component: Product
+		}
+	]
+});
 
-// The above code uses Vue without the compiler, which means you cannot
-// use Vue to target elements in your existing html templates. You would
-// need to always use single file components.
-// To be able to target elements in your existing html/erb templates,
-// comment out the above code and uncomment the below
-// Add <%= javascript_pack_tag 'hello_vue' %> to your layout
-// Then add this markup to your html template:
-//
-// <div id='hello'>
-//   {{message}}
-//   <app></app>
-// </div>
+document.addEventListener("DOMContentLoaded", () => {
+	const el = document.getElementById("app");
+	const app = new Vue({
+		router,
+		el,
+		render: h => h(App)
+	});
 
-
-// import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-//
-// document.addEventListener('DOMContentLoaded', () => {
-//   const app = new Vue({
-//     el: '#hello',
-//     data: {
-//       message: "Can you say hello?"
-//     },
-//     components: { App }
-//   })
-// })
-//
-//
-//
-// If the project is using turbolinks, install 'vue-turbolinks':
-//
-// yarn add vue-turbolinks
-//
-// Then uncomment the code block below:
-//
-// import TurbolinksAdapter from 'vue-turbolinks'
-// import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-//
-// Vue.use(TurbolinksAdapter)
-//
-// document.addEventListener('turbolinks:load', () => {
-//   const app = new Vue({
-//     el: '#hello',
-//     data: () => {
-//       return {
-//         message: "Can you say hello?"
-//       }
-//     },
-//     components: { App }
-//   })
-// })
+	console.log(app);
+});

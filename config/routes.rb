@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  resources :product_categories
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :cart_items
-  resources :invoice_status_codes
-  resources :order_items
-  resources :invoices
-  resources :product_status_codes
-  resources :products
-  resources :orders
-  resources :customers
+
+  # resources :cart_items
+  # resources :customers
+  # resources :invoices
+  # resources :invoice_status_codes
+  # resources :orders
+  # resources :order_items
+  # resources :products
+  # resources :product_categories
+  # resources :product_status_codes
 
   root to: 'home#index' # Vue takes over here.
 end

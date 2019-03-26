@@ -1,6 +1,8 @@
 <template lang="html">
 	<div>
-		navigation
+		<p class="title is-1">
+			Home
+		</p>
 	</div>
 </template>
 

@@ -1,6 +1,6 @@
 <template lang="html">
 	<div>
-		navigation
+		products
 	</div>
 </template>
 
