@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>KylesDogs</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>Kyles Dogs</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'vue_app' %>
-    <%= stylesheet_pack_tag 'vue_app' %>
-  </head>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'vue_app' %>
+		<%= stylesheet_pack_tag 'vue_app' %>
+	</head>
 
-  <body>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+	<body>
+		<%= yield %>
+	</body>
 </html>

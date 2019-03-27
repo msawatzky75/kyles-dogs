@@ -1,0 +1,17 @@
+@import "bulma/sass/utilities/initial-variables";
+
+$primary: teal;
+
+$body-background-color: $black-ter;
+$title-color: $white-ter;
+$text: $white-ter;
+$link: $blue;
+$link-visited: $link;
+$link-hover: $white;
+
+
+// Nav
+$navbar-background-color: $body-background-color;
+$navbar-item-color: $text;
+
+@import "bulma/bulma";
