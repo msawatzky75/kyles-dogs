@@ -28,7 +28,7 @@ module.exports = {
     }],
     "vue/html-indent": ["error", "tab"],
     "vue/max-attributes-per-line": ["warn", {
-      "singleline": 4,
+      "singleline": 6,
       "multiline": {
         "max": 1,
         "allowFirstLine": false
