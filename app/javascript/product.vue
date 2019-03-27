@@ -15,7 +15,7 @@
 				</div>
 				<div class="media-content">
 					<p class="title is-4">
-						John Smith
+						Product id: {{ id }}
 					</p>
 					<p class="subtitle is-6">
 						@johnsmith
@@ -38,18 +38,14 @@
 export default {
 	name: "Product",
 	props: {
-		productId: {
-			type: Number,
+		product: {
+			type: Object,
 			required: true
 		}
 	},
 	data() {
 		return {
-
 		};
-	},
-	created() {
-
 	}
 };
 </script>

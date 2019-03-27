@@ -5,18 +5,15 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Buefy from "buefy";
 import Vue from "vue";
 import Vuex from "vuex";
 import VueRouter from "vue-router";
 
-import "buefy/dist/buefy.css";
 import App from "../app.vue";
 import Home from "../home.vue";
-import Product from "../product.vue";
-import Products from "../products.vue";
+import Product from "../product-page.vue";
+import Products from "../products-page.vue";
 
-Vue.use(Buefy);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
@@ -41,12 +38,29 @@ const router = new VueRouter({
 		}
 	]
 });
+const vuex = new Vuex.Store({
+	state: {
+		products: []
+	},
+	getters: {
+		getProduct(state, id) {
+			let product = state.products.find(p => p.id == id);
+
+			if (!product) {
+				// Search the api for product and add to store.
+			}
+
+			return product;
+		}
+	}
+});
 
 document.addEventListener("DOMContentLoaded", () => {
 	const el = document.getElementById("app");
 	const app = new Vue({
-		router,
 		el,
+		router,
+		vuex,
 		render: h => h(App)
 	});
 

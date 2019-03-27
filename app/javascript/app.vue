@@ -1,10 +1,6 @@
 <template>
-	<div id="app">
-		<header>
-			<p class="title is-1">
-				Kyle's Dogs
-			</p>
-		</header><!-- header -->
+	<div>
+		<header-nav />
 
 		<div class="container">
 			<router-view />
@@ -13,7 +9,11 @@
 </template>
 
 <script>
+import HeaderNav from "navigation.vue";
 export default {
+	components: {
+		HeaderNav
+	},
 	data: function () {
 		return {
 
@@ -24,10 +24,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>
