@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-03-27 20:31:51
+  user: 
+  order_item: 
+
+two:
+  date: 2019-03-27 20:31:51
+  user: 
+  order_item: 
